@@ -1,0 +1,29 @@
+{
+  "name": "webpack2-react-redux-react-hot-reload-boilerplate",
+  "version": "0.0.1",
+  "description": "this boilerplate helps quickly setup necessary environment for react-redux applications",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "webpack-dev-server",
+    "build": "webpack -p"
+  },
+  "author": "andrew palatnyi",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.4.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "react-router-dom": "^4.0.0-beta.8",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
+  },
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "redux": "^3.6.0"
+  }
+}
