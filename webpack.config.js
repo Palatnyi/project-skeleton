@@ -4,10 +4,10 @@ const path = require("path");
 const config = {
     entry: [
         "react-hot-loader/patch",
-        "webpack-dev-server/client?http://localhost:3000",
-        "webpack/hot/only-dev-server",
+        "webpack-hot-middleware/client",
         "./app/index",
     ],
+    devServer: {inline: false},
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin()
@@ -21,7 +21,7 @@ const config = {
         rules: [
             {
                 test: /\.js$/,
-                loader: ["babel-loader"],
+                loaders: ["babel-loader"],
                 exclude: /node_modules/,
                 include: __dirname
             },

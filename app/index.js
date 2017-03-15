@@ -1,21 +1,33 @@
 import React from 'react';
 import {render} from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import App from "./containers/App.js"
+import Routes from "./Routes.js";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import todoApp from "./reducers";
+
+let store = createStore(
+    todoApp,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 render(
     <AppContainer>
-        <App/>
+        <Provider store={store}>
+            <Routes/>
+        </Provider>
     </AppContainer>,
     document.getElementById('root')
 );
 
 if (module.hot) {
-    module.hot.accept('./containers/App', () => {
-        const NewApp = require('./containers/App').default;
+    module.hot.accept('./Routes', () => {
+        const NewApp = require('./Routes').default;
         render(
             <AppContainer>
-                <NewApp/>
+                <Provider store={store}>
+                    <NewApp/>
+                </Provider>
             </AppContainer>,
             document.getElementById('root')
         );
