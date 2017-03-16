@@ -1,13 +1,23 @@
 const initialState = {
-        todos: ["one", "two", "three"],
+        todos: [{
+            title: "one",
+            description: "one description"
+        },{
+            title: "two",
+            description: "two description"
+        },{
+            title: "three",
+            description: "three description"
+        }],
         filter:""
 };
 
-const ADD_NEW_TODO = "ADD_NEW_TODO";
+const ADD_TODO_ITEM = "ADD_TODO_ITEM";
 export function todos(state = initialState.todos, action) {
+    console.log("action", action)
     switch(action.type) {
-        case ADD_NEW_TODO:
-            return state.concat(action.todo);
+        case ADD_TODO_ITEM:
+            return state.concat(action.value);
         default:
             return state;
     }

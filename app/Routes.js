@@ -1,8 +1,7 @@
 import React from "react";
 import {BrowserRouter as Router, Route} from "react-router-dom";
-import Navigation from "./containers/Navigation.js";
-import App from "./containers/AppList.js"
-import Greeting from "./containers/AppDetails.js"
+import AppList from "./containers/AppList.js"
+import AppDetails from "./containers/AppDetails.js"
 
 
 function Routes() {
@@ -10,11 +9,11 @@ function Routes() {
         <Router>
             <div>
                 <Route path="/">
-                    <Navigation>
-                        <Route exact path="/" component={App}></Route>
-                        <Route path="/app" component={App}/>
-                        <Route path="/greeting" component={Greeting}/>
-                    </Navigation>
+                    <div>
+                        <Route exact path="/" component={AppList}></Route>
+                        <Route path="/app" component={AppList}/>
+                        <Route path="/addTodo" component={AppDetails}/>
+                    </div>
                 </Route>
             </div>
         </Router>

@@ -9,3 +9,27 @@ export function filterToDoList(filterText) {
         filterText
     }
 }
+
+const ADD_TODO_ITEM = "ADD_TODO_ITEM";
+export function addTodoItem(value) {
+    return {
+        type: ADD_TODO_ITEM,
+        value
+    }
+}
+
+const REGISTER_NEW_FORM = "REGISTER_NEW_FORM";
+export function registerForm(formName) {
+    return {
+        type:REGISTER_NEW_FORM,
+        formName
+    };
+}
+
+const WRITE_FIELD_VALUE = "WRITE_FIELD_VALUE";
+export function writeField(formName, fieldName, value){
+    return {
+        type: WRITE_FIELD_VALUE,
+        formName, fieldName, value
+    }
+}
