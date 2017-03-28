@@ -1,35 +1,33 @@
-import React from 'react';
-import {render} from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
-import Routes from "./Routes.js";
+import React from "react";
+import {render} from "react-dom";
+import { AppContainer } from "react-hot-loader";
 import { Provider } from "react-redux";
-import { createStore } from "redux";
-import todoApp from "./reducers";
+import createAppStore from "./store";
+import Router from "./modules/router";
+import routes from "./routes";
 
-let store = createStore(
-    todoApp,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+const store  = createAppStore();
 
 render(
     <AppContainer>
         <Provider store={store}>
-            <Routes/>
+            <Router config={routes}/>
         </Provider>
     </AppContainer>,
-    document.getElementById('root')
+    document.getElementById("pinpoint-app")
 );
 
 if (module.hot) {
-    module.hot.accept('./Routes', () => {
-        const NewApp = require('./Routes').default;
+    module.hot.accept("./modules/router", () => {
+        const NewApp = require("./modules/router").default;
+        const routes = require("./routes").default;
         render(
             <AppContainer>
                 <Provider store={store}>
-                    <NewApp/>
+                    <NewApp config={routes}/>
                 </Provider>
             </AppContainer>,
-            document.getElementById('root')
+            document.getElementById("pinpoint-app")
         );
     });
 }
