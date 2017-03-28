@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, {PureComponent} from "react";
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 
@@ -9,7 +9,7 @@ class Login extends PureComponent {
 
     render() {
         return (
-            <div>Login test</div>
+            <div>Login</div>
         )
     }
 }

@@ -5,7 +5,7 @@ const config = {
     entry: [
         "react-hot-loader/patch",
         "webpack-hot-middleware/client",
-        "./app/index",
+        "./index",
     ],
     devServer: {inline: false},
     plugins: [
