@@ -1,33 +1,20 @@
-import React from "react";
-import {render} from "react-dom";
-import { AppContainer } from "react-hot-loader";
-import { Provider } from "react-redux";
-import createAppStore from "./store";
-import Router from "./modules/router";
-import routes from "./routes";
+import React from 'react'
+import ReactDOM from 'react-dom'
+import {AppContainer} from 'react-hot-loader'
 
-const store  = createAppStore();
+import App from './app';
 
-render(
+const render = Component => {
+  ReactDOM.render(
     <AppContainer>
-        <Provider store={store}>
-            <Router config={routes}/>
-        </Provider>
+      <Component />
     </AppContainer>,
     document.getElementById("pinpoint-app")
-);
+  )
+};
+
+render(App);
 
 if (module.hot) {
-    module.hot.accept("./modules/router", () => {
-        const NewApp = require("./modules/router").default;
-        const routes = require("./routes").default;
-        render(
-            <AppContainer>
-                <Provider store={store}>
-                    <NewApp config={routes}/>
-                </Provider>
-            </AppContainer>,
-            document.getElementById("pinpoint-app")
-        );
-    });
+  module.hot.accept('./app', () => { render(App)})
 }

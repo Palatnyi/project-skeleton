@@ -9,7 +9,7 @@ class Login extends PureComponent {
 
     render() {
         return (
-            <div>Login</div>
+            <div>Login test</div>
         )
     }
 }
