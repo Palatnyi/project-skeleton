@@ -10,7 +10,12 @@ const config = {
     devServer: {inline: false},
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoEmitOnErrorsPlugin()
+        new webpack.NoEmitOnErrorsPlugin(),
+      new webpack.DefinePlugin({
+        "process.env": {
+          NODE_ENV: JSON.stringify(process.env.NODE_ENV)
+        },
+      })
     ],
     output: {
         path: path.resolve(__dirname, "dist"),

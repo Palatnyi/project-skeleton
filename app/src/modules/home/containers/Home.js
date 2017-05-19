@@ -1,37 +1,41 @@
-import React, { PureComponent } from "react";
+import React, {PureComponent} from "react";
 import {connect} from "react-redux";
 import {NavLink} from "react-router-dom";
-import _ from "lodash";
-import {bindActionCreators} from "redux";
+import {increment, decrement} from "../actions.js";
 
 class Home extends PureComponent {
-    constructor(props) {
-        super(props);
-    }
+  constructor(props) {
+    super(props);
+  }
 
-    render() {
-        console.log("asdads");
-        const links = _.map(["login", "signup"], (link, i) => {
+  render() {
+    const {counter, increment, decrement} = this.props;
+    return (
+      <div>
+        <div>
+          {["login", "signup"].map((link, i) => {
             return (
-                <NavLink to={`/${link}`} key={`home-link-${i}`}>{link}</NavLink>
+              <NavLink to={`/${link}`} key={`home-link-${i}`}>{link}</NavLink>
             )
-        });
-        return (
-            <div>
-                {links}
-            </div>
-        )
-    }
+          })}
+        </div>
+        <div>
+          <h3>{counter}</h3>
+          <div>
+            <button onClick={increment}>{"increment"}</button>
+          </div>
+          <div>
+            <button onClick={decrement}>{"decrement"}</button>
+          </div>
+        </div>
+      </div>
+    )
+  }
 }
 
 function mapStateToProps(state) {
-    return state;
-};
+  const {home: {counter}} = state;
+  return {counter};
+}
 
-function mapDispatchToProps(dispatch) {
-    // const actions = bindActionCreators({/*actions*/}, dispatch);
-    // return actions;
-};
-
-
-export default connect()(Home);
+export default connect(mapStateToProps, {increment, decrement})(Home);

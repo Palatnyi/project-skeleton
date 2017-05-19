@@ -1,6 +1,7 @@
 import React, {PureComponent} from "react";
 import {connect} from "react-redux";
-import {bindActionCreators} from "redux";
+import Form from "../components/Form";
+import {login} from "../actions.js";
 
 class Login extends PureComponent {
     constructor(props) {
@@ -9,19 +10,11 @@ class Login extends PureComponent {
 
     render() {
         return (
-            <div>Login</div>
+            <div>
+                <Form onSubmit={this.props.login}/>
+            </div>
         )
     }
 }
 
-function mapStateToProps(state) {
-    return state;
-};
-
-function mapDispatchToProps(dispatch) {
-    // const actions = bindActionCreators({/*actions*/}, dispatch);
-    // return actions;
-};
-
-
-export default connect()(Login);
+export default connect(undefined, {login})(Login);

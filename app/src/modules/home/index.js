@@ -1,3 +1,4 @@
-import routes from "./routes/routes";
+import routes from "./routes";
+import homeReducer from "./reducer.js";
 
-export default routes;
+export {routes, homeReducer};

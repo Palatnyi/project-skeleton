@@ -1,5 +1,5 @@
-import Login from "../containers/Login";
-import Signup from "../containers/Signup";
+import Login from "./containers/Login";
+import Signup from "./containers/Signup";
 
 const routes = [
     {
