@@ -21,6 +21,7 @@ I've created this so you can clone it and start coding your app without any prep
 7. [webpack](https://webpack.js.org/)
 8. [lodash - usefull library to operate over collections of data](https://lodash.com/)
 9. [react-hot-loader](https://github.com/gaearon/react-hot-loader)
+10. [cross-env](https://www.npmjs.com/package/cross-env)
 
 Happy coding! =) 
 
