@@ -4,14 +4,14 @@
 Hello world! This repository contains the starter kit for react-redux-axios applications.
 I've created this so you can clone it and start coding your app without any preparations of app skeleton.
 
-####How to use:
+#### How to use:
 1. `git clone this repo`
 2. cd into app folder
 3. `npm install`
 4. `npm start`
 5. localhost:4000
 
-####What is included into starter-kit
+#### What is included into starter-kit
 1. [ReactJS](https://facebook.github.io/react/)
 2. [ReduxJS](http://redux.js.org/)
 3. [Axios - promise based HTTP](https://github.com/mzabriskie/axios)
@@ -24,5 +24,5 @@ I've created this so you can clone it and start coding your app without any prep
 
 Happy coding! =) 
 
-##MIT [License](https://opensource.org/licenses/mit-license.php)
+## MIT [License](https://opensource.org/licenses/mit-license.php)
 
